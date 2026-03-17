@@ -6,10 +6,10 @@ import Goals from "../assets/goals.svg";
 
 const Onboarding2 = () => {
  return (
-    <div className="w-360 h-256 flex relative">
+    <div className="flex flex-col md:flex-row min-h-screen">
     
         {/* LEFT GRADIENT PANEL */}
-    <div className="w-[465.99px] h-[1024.2px] relative overflow-hidden">
+    <div className="hidden md:block w-[465.99px] h-[1024.2px] relative overflow-hidden">
 
   {/* Background Image */}
   <img
@@ -49,9 +49,9 @@ const Onboarding2 = () => {
 
        
       {/* RIGHT CONTENT */}
-      <div className="flex flex-1 bg-white items-center pl-12">
+      <div className="flex flex-1 bg-white items-center justify-center p-4 md:pl-12">
 
-        <div className="w-[465.99px] max-w-[465.99px] h-[415.46px] px-10 flex flex-col gap-7.5">
+        <div className="w-full max-w-md md:w-[465.99px] md:max-w-[465.99px] px-4 md:px-10 flex flex-col gap-7.5">
 
           {/* ICON */}
           <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center">

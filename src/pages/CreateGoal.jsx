@@ -17,7 +17,7 @@ const CreateGoal = () => {
       <GoalAmountCard />
 
       {/* Summary */}
-      <div className="mt-6 rounded-xl p-4 w-120 bg-white text-sm">
+      <div className="mt-6 rounded-xl p-4 w-full bg-white text-sm">
         <p className="text-gray-400 mb-2">Summary</p>
 
         <div className="flex justify-between">

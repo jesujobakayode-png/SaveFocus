@@ -7,7 +7,7 @@ const GoalAmountCard = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white rounded-xl p-6 w-120">
+    <div className="bg-white rounded-xl p-6 w-full">
 
       <h2 className="font-semibold mb-1">
         How much do you want to save?

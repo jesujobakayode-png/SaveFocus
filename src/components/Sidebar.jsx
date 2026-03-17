@@ -5,13 +5,7 @@ import image from "../assets/image.png";
 
 const Sidebar = () => {
   return (
-    <div
-      className="bg-white flex flex-col justify-between"
-      style={{
-        width: "207.09px",
-        height: "1024px",
-      }}
-    >
+    <div className="hidden md:flex md:flex-col md:justify-between w-52 bg-white">
       {/* Top Section */}
       <div>
         {/* Logo */}

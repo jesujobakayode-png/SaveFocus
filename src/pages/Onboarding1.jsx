@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 const Onboarding1 = () => {
   return (
-    <div className="w-360 h-256 flex relative">
+    <div className="flex flex-col md:flex-row min-h-screen">
 
       {/* LEFT GRADIENT PANEL */}
-      <div className="flex w-[465.99px] h-[1024.2px] bg-linear-to-b from-[#F54900] to-[#CA3500] pl-4 pt-6">
+      <div className="relative hidden md:flex w-[465.99px] h-[1024.2px] bg-linear-to-b from-[#F54900] to-[#CA3500] pl-4 pt-6">
         
         <img src={image} alt="image" className="w-15 h-15 p-2 flex" />
 
@@ -28,9 +28,9 @@ const Onboarding1 = () => {
       </div>
 
       {/* RIGHT CONTENT */}
-     <div className="flex flex-1 bg-white items-center pl-12">
+     <div className="flex flex-1 bg-white items-center justify-center p-4 md:pl-12">
 
-        <div className="w-[465.99px] max-w-[465.99px] h-[415.46px] px-10 flex flex-col gap-7.5">
+        <div className="w-full max-w-md md:w-[465.99px] md:max-w-[465.99px] px-4 md:px-10 flex flex-col gap-7.5">
 
           {/* ICON */}
           <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center">

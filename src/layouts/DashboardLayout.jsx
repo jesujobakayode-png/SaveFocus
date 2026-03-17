@@ -3,19 +3,11 @@ import Sidebar from "../components/Sidebar";
 
 const DashboardLayout = ({ children }) => {
   return (
-    <div className="flex h-256">
+    <div className="flex flex-col md:flex-row min-h-screen">
 
       <Sidebar />
 
-      <div
-        className="flex-1 bg-gray-50"
-        style={{
-          paddingTop: "25.89px",
-          paddingRight: "103.54px",
-          paddingBottom: "318.72px",
-          paddingLeft: "103.54px",
-        }}
-      >
+      <div className="flex-1 bg-gray-50 p-4 md:px-24 md:py-6">
         {children}
       </div>
 

@@ -8,7 +8,7 @@ import { FaFacebook } from "react-icons/fa";
 
 const Signup = () => {
   return (
-    <div className="flex h-255.75 w-full">
+    <div className="flex flex-col lg:flex-row min-h-screen w-full">
 
       {/* LEFT PANEL */}
 
@@ -37,22 +37,8 @@ const Signup = () => {
 
       {/* RIGHT PANEL */}
 
-     <div
-  className="bg-white flex justify-center items-center"
-  style={{
-    width: "517px",
-    height: "1023px",
-    padding: "51.71px",
-  }}
->
-      <div
-  className="flex flex-col justify-center"
-  style={{
-    width: "361.99px",
-    maxWidth: "361.99px",
-    gap: "25.86px",
-  }}
->
+     <div className="bg-white flex justify-center items-center w-full lg:w-129.25 p-4 lg:p-[51.71px]">
+      <div className="flex flex-col justify-center w-full max-w-sm lg:w-[361.99px] lg:max-w-[361.99px] gap-4 lg:gap-[25.86px]">
 
           <div>
             <h2 className="text-3xl font-bold text-gray-800">
