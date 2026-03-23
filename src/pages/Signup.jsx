@@ -8,15 +8,12 @@ import { FaFacebook } from "react-icons/fa";
 
 const Signup = () => {
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen w-full">
-
+    <div className="flex flex-col lg:flex-row min-h-screen items-stretch w-full">
       {/* LEFT PANEL */}
 
       <div
-        className="hidden lg:flex items-center justify-center text-white"
+        className="flex items-center justify-center text-white min-h-screen w-full lg:w-230"
         style={{
-          width: "920px",
-          height: "1023px",
           background:
             "linear-gradient(135deg, #FF6900 0%, #F54900 50%, #CA3500 100%)",
         }}
@@ -37,7 +34,7 @@ const Signup = () => {
 
       {/* RIGHT PANEL */}
 
-     <div className="bg-white flex justify-center items-center w-full lg:w-129.25 p-4 lg:p-[51.71px]">
+     <div className="bg-white flex justify-center items-center w-full lg:w-129.25 min-h-screen p-4 lg:p-[51.71px]">
       <div className="flex flex-col justify-center w-full max-w-sm lg:w-[361.99px] lg:max-w-[361.99px] gap-4 lg:gap-[25.86px]">
 
           <div>

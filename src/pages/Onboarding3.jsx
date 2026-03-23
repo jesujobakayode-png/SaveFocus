@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 
 const Onboarding3 = () => {
  return (
-   <div className="flex flex-col md:flex-row min-h-screen">
+<div className="flex flex-col md:flex-row h-screen">
    
          {/* LEFT GRADIENT PANEL */}
-    <div className="hidden md:block w-[465.99px] h-[1024.2px] relative overflow-hidden">
+    <div className="w-full md:w-[465.99px] h-screen relative overflow-hidden">
         
       {/* Background Image */}
       <img
@@ -54,7 +54,7 @@ const Onboarding3 = () => {
 
           {/* ICON */}
           <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center">
-            <img src={Lock} alt="SaveFocus Logo" className="w-6 h-6" />
+            <img src={Lock} alt="SaveFocus Logo" className="w-8 h-8" />
           </div>
 
           {/* TITLE */}

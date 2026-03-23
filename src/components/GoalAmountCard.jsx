@@ -7,24 +7,19 @@ const GoalAmountCard = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white rounded-xl p-6 w-full">
+    <div className="w-full rounded-xl bg-white p-4 sm:p-6">
+      <h2 className="mb-1 font-semibold">How much do you want to save?</h2>
 
-      <h2 className="font-semibold mb-1">
-        How much do you want to save?
-      </h2>
-
-      <p className="text-xs text-gray-500 mb-4">
+      <p className="mb-4 text-xs text-gray-500">
         Set your target amount for "Dream Vacation"
       </p>
 
-      {/* Input */}
       <input
-        className="w-full rounded-lg p-3 mb-4 text-sm bg-gray-100"
+        className="mb-4 w-full rounded-lg bg-gray-100 p-3 text-sm"
         placeholder="$ 2000"
       />
 
-      {/* Amount Options */}
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
         <AmountButton value="100" onMouseEnter={() => setSelectedAmount("100")} onClick={() => setSelectedAmount("100")} active={selectedAmount === "100"} />
         <AmountButton value="500" onMouseEnter={() => setSelectedAmount("500")} onClick={() => setSelectedAmount("500")} active={selectedAmount === "500"} />
         <AmountButton value="1,000" onMouseEnter={() => setSelectedAmount("1,000")} onClick={() => setSelectedAmount("1,000")} active={selectedAmount === "1,000"} />
@@ -33,17 +28,15 @@ const GoalAmountCard = () => {
         <AmountButton value="10,000" onMouseEnter={() => setSelectedAmount("10,000")} onClick={() => setSelectedAmount("10,000")} active={selectedAmount === "10,000"} />
       </div>
 
-      {/* Buttons */}
-      <div className="flex justify-between">
-        <button className="px-6 py-2 rounded-lg text-sm">
+      <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+        <button className="rounded-lg px-6 py-3 text-sm sm:py-2" onClick={() => navigate("/goals")}>
           Back
         </button>
 
-        <button className="bg-[#F54900] text-white px-6 py-2 rounded-lg text-sm" onClick={() => navigate('/goaldetails')}>
+        <button className="rounded-lg bg-[#F54900] px-6 py-3 text-sm text-white sm:py-2" onClick={() => navigate("/goaldetails")}>
           Continue
         </button>
       </div>
-
     </div>
   );
 };

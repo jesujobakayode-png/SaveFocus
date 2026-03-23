@@ -2,20 +2,16 @@ import React from "react";
 
 const MonthlyCard = () => {
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm mt-4">
+    <div className="rounded-xl bg-white p-4 shadow-sm">
+      <h3 className="mb-3 text-sm font-medium">This Month</h3>
 
-      <h3 className="text-sm font-medium mb-3">This Month</h3>
+      <p className="mb-2 text-xs text-gray-400">Monthly Target</p>
 
-      <p className="text-xs text-gray-400 mb-2">Monthly Target</p>
-
-      <div className="h-2 bg-gray-200 rounded">
-        <div className="h-2 bg-black w-2/3 rounded"></div>
+      <div className="h-2 rounded bg-gray-200">
+        <div className="h-2 w-2/3 rounded bg-black"></div>
       </div>
 
-      <p className="text-xs text-gray-400 mt-2">
-        $150 of $200 saved
-      </p>
-
+      <p className="mt-2 text-xs text-gray-400">$150 of $200 saved</p>
     </div>
   );
 };
