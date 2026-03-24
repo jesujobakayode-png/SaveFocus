@@ -6,18 +6,21 @@ import { Link } from "react-router-dom";
 const Onboarding1 = () => {
   return (
     <div className="flex min-h-screen flex-col md:h-screen md:flex-row">
-      <div className="relative flex min-h-[240px] w-full bg-linear-to-b from-[#F54900] to-[#CA3500] pl-4 pt-6 md:h-screen md:w-[465.99px]">
-        <img src={image} alt="image" className="flex h-15 w-15 p-2" />
+      <div className="relative flex min-h-60 w-full bg-linear-to-b from-[#F54900] to-[#CA3500] pl-4 pt-6 md:h-screen md:w-[465.99px]">
+        <div className="relative flex h-full w-full flex-col">
+          <div className="flex items-center gap-2">
+            <img src={image} alt="image" className="h-15 w-15 p-2" />
 
-        <div className="flex flex-col">
-          <span className="text-2xl font-bold text-white">SaveFocus</span>
-          <span className="text-white">One Goal at a Time</span>
-        </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold text-white">Goals</span>
+            </div>
+          </div>
 
-        <div className="absolute bottom-6 left-3 flex gap-2 p-2">
-          <span className="h-1 w-8 rounded bg-gray-300"></span>
-          <span className="h-1 w-1 rounded bg-gray-300"></span>
-          <span className="h-1 w-1 rounded bg-gray-300"></span>
+          <div className="absolute bottom-6 left-3 flex gap-2 p-2">
+            <span className="h-1 w-8 rounded bg-gray-300"></span>
+            <span className="h-1 w-1 rounded bg-gray-300"></span>
+            <span className="h-1 w-1 rounded bg-gray-300"></span>
+          </div>
         </div>
       </div>
 

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Onboarding3 = () => {
   return (
     <div className="flex min-h-screen flex-col md:h-screen md:flex-row">
-      <div className="relative min-h-[240px] w-full overflow-hidden md:h-screen md:w-[465.99px]">
+      <div className="relative min-h-60 w-full overflow-hidden md:h-screen md:w-[465.99px]">
         <img
           src={LockGoal}
           alt="background"
@@ -21,8 +21,7 @@ const Onboarding3 = () => {
             <img src={image} alt="logo" className="h-15 w-15 p-2" />
 
             <div className="flex flex-col">
-              <span className="text-2xl font-bold text-white">SaveFocus</span>
-              <span className="text-white">One Goal at a Time</span>
+              <span className="text-2xl font-bold text-white">Goals</span>
             </div>
           </div>
 
