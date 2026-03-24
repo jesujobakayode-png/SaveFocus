@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
-import Button from "../components/button";
+import Button from "../components/Button";
 import AmountButton from "../components/AmountButton";
 import { useGoals } from "../context/useGoals";
 
