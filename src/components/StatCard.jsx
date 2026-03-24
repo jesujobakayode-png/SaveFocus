@@ -3,16 +3,7 @@ import React from "react";
 
 const StatCard = ({ title, value, icon }) => {
   return (
-    <div
-      style={{
-        width: "179.63px",
-        height: "86.14px",
-        borderRadius: "11.32px",
-        borderWidth: "0.81px",
-        padding: "19.14px",
-      }}
-      className="bg-white flex justify-between items-center border-gray-300"
-    >
+    <div className="flex min-h-[86.14px] w-full items-center justify-between rounded-[11.32px] border border-gray-300 bg-white p-4 sm:p-[19.14px] md:w-[179.63px]">
       <div>
         <p className="text-xs text-gray-400">{title}</p>
         <h2 className="font-semibold">{value}</h2>

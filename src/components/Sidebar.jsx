@@ -1,88 +1,87 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { FiHome, FiSettings, FiTarget } from "react-icons/fi";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FiHome, FiCheckCircle, FiLogOut, FiSettings } from "react-icons/fi";
 import image from "../assets/image.png";
+import { useAuth } from "../context/useAuth";
 
 const Sidebar = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { currentUser, signout } = useAuth();
+
+  const navItems = [
+    { name: "Dashboard", icon: <FiHome />, path: "/dashboard" },
+    { name: "Completed Goals", icon: <FiCheckCircle />, path: "/goals" },
+    { name: "Settings", icon: <FiSettings />, path: "/settings" },
+  ];
+
+  const handleSignout = () => {
+    signout();
+    navigate("/signin");
+  };
+
   return (
-    <>
-      <div className="border-b border-gray-200 bg-white px-4 py-3 md:hidden">
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-2">
-            <img src={image} alt="logo" className="w-6 shrink-0" />
-            <div className="min-w-0">
-              <p className="text-sm font-semibold">SaveFocus</p>
-              <p className="truncate text-xs text-gray-400">One-Goal Saving</p>
-            </div>
-          </div>
+    <div
+      className="w-full shrink-0 border-b bg-white md:sticky md:top-0 md:h-screen md:w-51.75 md:border-b-0 md:border-r"
+      style={{
+        borderRight: "0.5px solid #eee",
+      }}
+    >
+      <div className="flex h-full flex-col">
+        {/* TOP */}
+        <div className="p-4 flex flex-col gap-6">
 
-          <Link to="/creategoal" className="rounded-lg bg-[#F54900] px-3 py-2 text-sm text-white">
-            New Goal
+          {/* LOGO */}
+          <Link to="/" className="flex items-center gap-2">
+            <img src={image} alt="logo" className="w-8 h-8" />
+            <span className="font-semibold text-gray-800">Goal</span>
           </Link>
+
+          {/* NEW GOAL BUTTON */}
+          <Link
+            to="/creategoal"
+            className="bg-[#F54900] text-white text-sm py-2 rounded-lg text-center"
+          >
+            + New Goal
+          </Link>
+
+          {/* NAVIGATION */}
+          <div className="flex flex-col gap-2">
+            {navItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.path}
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm ${
+                  location.pathname === item.path
+                    ? "bg-orange-50 text-[#F54900]"
+                    : "text-gray-500 hover:bg-gray-100"
+                }`}
+              >
+                {item.icon}
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* BOTTOM USER */}
+        <div className="mt-4 border-t p-4 text-sm text-gray-500 md:mt-auto">
+          <p className="font-medium text-gray-700">
+            {currentUser?.fullName || "SaveFocus User"}
+          </p>
+          <p className="text-xs">{currentUser?.email || "No email available"}</p>
+
+          <button
+            type="button"
+            onClick={handleSignout}
+            className="mt-3 flex items-center gap-2 text-xs font-medium text-[#F54900]"
+          >
+            <FiLogOut />
+            Sign Out
+          </button>
         </div>
       </div>
-
-      <nav className="sticky top-0 z-10 border-b border-gray-200 bg-white px-4 py-3 md:hidden">
-        <div className="flex items-center justify-between gap-2 text-sm text-gray-600">
-          <Link to="/overview" className="flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-orange-500">
-            <FiHome /> Overview
-          </Link>
-
-          <Link to="/goals" className="flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-orange-500">
-            <FiTarget /> Goals
-          </Link>
-
-          <Link className="flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 hover:bg-orange-50 hover:text-orange-500">
-            <FiSettings /> Settings
-          </Link>
-        </div>
-      </nav>
-
-      <div className="hidden min-h-screen w-52 flex-col justify-between bg-white md:flex">
-        <div>
-          <div className="flex items-center gap-2 p-4">
-            <img src={image} alt="logo" className="w-6" />
-            <div>
-              <p className="text-sm font-semibold">SaveFocus</p>
-              <p className="text-xs text-gray-400">One-Goal Saving</p>
-            </div>
-          </div>
-
-          <nav className="mt-6 flex flex-col gap-4 px-4 text-sm text-gray-600">
-            <Link to="/overview" className="flex items-center gap-2 hover:text-orange-500">
-              <FiHome /> Overview
-            </Link>
-
-            <Link to="/goals" className="flex items-center gap-2 hover:text-orange-500">
-              <FiTarget /> Goals
-            </Link>
-
-            <Link className="flex items-center gap-2 hover:text-orange-500">
-              <FiSettings /> Settings
-            </Link>
-          </nav>
-        </div>
-
-        <div className="space-y-4 p-4">
-          <Link to="/creategoal" className="block">
-            <button className="w-full rounded-lg bg-[#F54900] py-2 text-sm text-white">
-              + New Goal
-            </button>
-          </Link>
-
-          <div className="flex items-center gap-2 text-sm">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200">
-              IM
-            </div>
-
-            <div>
-              <p className="text-xs font-medium">Isaac Martins</p>
-              <p className="text-[10px] text-gray-400">isaac@email.com</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,10 @@
 import React from "react";
+import { formatCurrency, getRemainingAmount } from "../utils/goals";
 
-const ProgressCard = () => {
+const ProgressCard = ({ goal }) => {
+  const circumference = 376.99;
+  const progressStroke = (goal.progress / 100) * circumference;
+
   return (
     <div className="rounded-xl bg-white p-4 shadow-sm sm:p-6">
       <div className="flex flex-col items-center">
@@ -21,12 +25,12 @@ const ProgressCard = () => {
               stroke="#10b981"
               strokeWidth="10"
               fill="none"
-              strokeDasharray={`${0.65 * 376.99} 376.99`}
+              strokeDasharray={`${progressStroke} ${circumference}`}
               strokeLinecap="round"
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center text-xl font-semibold">
-            65%
+            {goal.progress}%
           </div>
         </div>
 
@@ -36,17 +40,17 @@ const ProgressCard = () => {
       <div className="mt-6 grid grid-cols-1 gap-4 text-sm sm:grid-cols-3">
         <div>
           <p className="text-gray-400">Target Amount</p>
-          <p className="font-medium">$2,000</p>
+          <p className="font-medium">{formatCurrency(goal.targetAmount)}</p>
         </div>
 
         <div>
           <p className="text-gray-400">Current Balance</p>
-          <p className="font-medium text-[#F54900]">$1,300</p>
+          <p className="font-medium text-[#F54900]">{formatCurrency(goal.currentBalance)}</p>
         </div>
 
         <div>
           <p className="text-gray-400">Remaining</p>
-          <p className="font-medium">$700</p>
+          <p className="font-medium">{formatCurrency(getRemainingAmount(goal))}</p>
         </div>
       </div>
     </div>
