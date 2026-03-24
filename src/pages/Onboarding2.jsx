@@ -1,8 +1,8 @@
 import React from "react";
-import Target1 from "../assets/target1.png";
+import Target1 from "../assets/Target1.png";
 import image from "../assets/image.png";
 import { Link } from "react-router-dom";
-import Goals from "../assets/goals.svg";
+import Goals from "../assets/Goals.svg";
 
 const Onboarding2 = () => {
   return (

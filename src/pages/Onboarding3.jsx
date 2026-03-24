@@ -1,7 +1,7 @@
 import React from "react";
-import Lock from "../assets/lock.svg";
+import Lock from "../assets/Lock.svg";
 import image from "../assets/image.png";
-import LockGoal from "../assets/lockgoal.svg";
+import LockGoal from "../assets/LockGoal.svg";
 import { Link } from "react-router-dom";
 
 const Onboarding3 = () => {

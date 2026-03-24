@@ -6,20 +6,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-  },
-  plugins: [],
-  theme: {
-  extend: {
-    keyframes: {
-      fadeIn: {
-        "0%": { opacity: 0 },
-        "100%": { opacity: 1 },
+    extend: {
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 1s ease-in",
       },
     },
-    animation: {
-      fadeIn: "fadeIn 1s ease-in",
-    },
   },
-},
-}
+  plugins: [],
+};
